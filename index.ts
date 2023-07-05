@@ -14,6 +14,14 @@ app.use(express.json());
 app.use(cors({
     origin: "*"
 }));
+
+// Default route
+app.get("/", (req: Request, res: Response) => {
+    res.json({
+        message: "Your api is running fine!"
+    });
+});
+
 app.use("/api/survey", surveyRoute);
 app.use("/api/report", reportRoute);
 
